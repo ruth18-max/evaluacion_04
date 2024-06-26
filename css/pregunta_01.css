@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5edf4; /* Lila claro */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Blanco */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  text-align: center;
+}
+
+h2 {
+  color: #1c0023; /* Lila oscuro */
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #70568b; /* Lila medio */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #8b5098; /* Lila más claro al pasar el mouse */
+}
+
+.btn-clear {
+  background-color: #70568b; /* Mismo color que el botón principal */
+  margin-left: 10px;
+}
+
+.btn-clear:hover {
+  background-color: #8b5098; /* Lila más claro al pasar el mouse */
+}
+
+#resultado {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333333; /* Color de texto oscuro */
+}

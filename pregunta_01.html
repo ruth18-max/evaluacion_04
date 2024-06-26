@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificador de número</title>
+<link rel="stylesheet" href="css/pregunta_01.css">
+</head>
+<body>
+<div class="banner">
+     <img src="img/banner-certus.webp" width="100%" alt="">
+</div>
+<div class="container">
+  <h2>EVALUAR NUMEROS </h2>
+  <img src="img/caja.jpg" width="70%">
+  <div class="input-group">
+    <label for="numero">Ingrese un número:</label> <br>
+    <input type="number" id="numero" placeholder="Ingrese un número..."><br>
+    <div id="resultado"></div>
+  </div>
+  <button class="btn" onclick="calcular()">Calcular</button>
+  <button class="btn btn-clear" onclick="limpiar()">Limpiar</button>
+</div>
+<hr>
+<footer style="text-align: center;color: rgb(52, 51, 51);">
+    AUTORA : LUISA GOMEZ GOMEZ 
+</footer>
+
+<script>
+function calcular() {
+  var numero = document.getElementById('numero').value.trim();
+  
+  if (numero === "") {
+    alert("Por favor ingrese un número.");
+    return;
+  }
+  
+  numero = parseFloat(numero); 
+  
+  if (isNaN(numero)) {
+    alert("Por favor ingrese un valor numérico válido.");
+    return;
+  }
+  
+  var resultado = "";
+  
+  if (numero === 0) {
+    resultado = "Cero ";
+  } else if (numero > 0) {
+    resultado = "Positivo";
+  } else {
+    resultado = "Negativo";
+  }
+  
+  document.getElementById('resultado').innerText = "El número es: " + resultado;
+}
+
+function limpiar() {
+  document.getElementById('numero').value = "";
+  document.getElementById('resultado').innerText = "";
+}
+</script>
+</body>
+</html>

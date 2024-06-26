@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boleta de Venta</title>
+<link rel="stylesheet" href="css/pregunta_02.css">
+</head>
+<body>
+<div class="banner">
+     <img src="img/banner-certus.webp" width="100%" alt="">
+</div>
+<div class="container">
+  <h2>BOLETA DE VENTA</h2>
+  <img src="img/store.png" alt="">
+  <div class="input-group">
+    <label for="producto">Producto:</label>
+    <select id="producto" onchange="mostrarPrecio()">
+      <option value="">Seleccione un producto...</option>
+      <option value="Arroz costeño 3/4">Arroz costeño 3/4</option>
+      <option value="Azúcar paisana 1k">Azúcar paisana 1k</option>
+      <option value="Chocolate Donofrio">Chocolate Donofrio</option>
+      <option value="Aceite primor premium">Aceite primor premium</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" readonly>
+  </div>
+  <div class="input-group">
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" min="1" value="1" onchange="validarCantidad()">
+  </div>
+  <div class="input-group">
+    <label for="descuento">Descuento %:</label>
+    <input type="number" id="descuento" min="0" value="0" onchange="validarDescuento()">
+  </div>
+  <div class="input-group">
+    <label for="importe-s">Importe S/:</label>
+    <input type="text" id="importe-s" readonly>
+  </div>
+  <div class="input-group">
+    <label for="importe-us">Importe $:</label>
+    <input type="text" id="importe-us" readonly>
+  </div>
+  <button class="btn" onclick="calcular()">Calcular</button>
+  <button class="btn btn-clear" onclick="limpiar()">Limpiar</button>
+</div>
+<hr>
+<footer style="text-align: center;color: rgb(52, 51, 51);">
+    AUTORA : LUISA GOMEZ GOMEZ 
+</footer>
+<script>
+function mostrarPrecio() {
+  var producto = document.getElementById('producto').value;
+  var precio;
+
+  switch (producto) {
+    case 'Arroz costeño 3/4':
+      precio = 4.50;
+      break;
+    case 'Azúcar paisana 1k':
+      precio = 6.20;
+      break;
+    case 'Chocolate Donofrio':
+      precio = 1.20;
+      break;
+    case 'Aceite primor premium':
+      precio = 12.50;
+      break;
+    default:
+      precio = 0; 
+  }
+
+  document.getElementById('precio').value = precio.toFixed(2);
+}
+
+function validarCantidad() {
+  var cantidad = document.getElementById('cantidad').value;
+  if (cantidad <= 0) {
+    alert("La cantidad debe ser mayor a 0.");
+    document.getElementById('cantidad').value = 1;
+  }
+}
+
+function validarDescuento() {
+  var descuento = document.getElementById('descuento').value;
+  if (descuento < 0) {
+    alert("El descuento no puede ser menor que 0.");
+    document.getElementById('descuento').value = 0;
+  }
+}
+
+function calcular() {
+  var precio = parseFloat(document.getElementById('precio').value);
+  var cantidad = parseInt(document.getElementById('cantidad').value);
+  var descuento = parseInt(document.getElementById('descuento').value);
+  
+  if (isNaN(precio) || isNaN(cantidad) || isNaN(descuento)) {
+    alert("Por favor complete todos los campos correctamente.");
+    return;
+  }
+  
+  if (cantidad <= 0) {
+    alert("La cantidad debe ser mayor a 0.");
+    return;
+  }
+  
+  if (descuento < 0) {
+    alert("El descuento no puede ser menor que 0.");
+    return;
+  }
+  
+  var importeS = cantidad * precio - (cantidad * precio * descuento) / 100;
+  var importeUS = importeS / 3.8;
+  
+  document.getElementById('importe-s').value = importeS.toFixed(2);
+  document.getElementById('importe-us').value = importeUS.toFixed(2);
+}
+
+function limpiar() {
+  document.getElementById('producto').selectedIndex = 0;
+  document.getElementById('precio').value = "";
+  document.getElementById('cantidad').value = 1;
+  document.getElementById('descuento').value = 0;
+  document.getElementById('importe-s').value = "";
+  document.getElementById('importe-us').value = "";
+}
+</script>
+</body>
+</html>

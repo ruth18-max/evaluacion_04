@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5edf4; /* Lila claro */
+  background-color: #f5edf4; 
   margin: 0;
   padding: 0;
 }
@@ -9,14 +9,14 @@ body {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff; /* Blanco */
+  background-color: #ffffff; 
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   text-align: center;
 }
 
 h2 {
-  color: #1c0023; /* Lila oscuro */
+  color: #1c0023; 
 }
 
 .input-group {
@@ -33,7 +33,7 @@ input[type="number"] {
 }
 
 .btn {
-  background-color: #70568b; /* Lila medio */
+  background-color: #70568b; 
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -44,16 +44,16 @@ input[type="number"] {
 }
 
 .btn:hover {
-  background-color: #8b5098; /* Lila más claro al pasar el mouse */
+  background-color: #8b5098; 
 }
 
 .btn-clear {
-  background-color: #70568b; /* Mismo color que el botón principal */
+  background-color: #70568b; 
   margin-left: 10px;
 }
 
 .btn-clear:hover {
-  background-color: #8b5098; /* Lila más claro al pasar el mouse */
+  background-color: #8b5098; 
 }
 
 #resultado {
